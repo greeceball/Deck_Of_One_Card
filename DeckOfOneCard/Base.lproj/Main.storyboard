@@ -7,20 +7,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card View Controller-->
         <scene sceneID="sGY-0Z-TKh">
             <objects>
-                <viewController id="R01-Cn-ogS" sceneMemberID="viewController">
+                <viewController id="R01-Cn-ogS" customClass="CardViewController" customModule="DeckOfOneCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IZa-P0-4L8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zh-5q-RWq">
+                                <rect key="frame" x="186" y="100" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zk-6I-Wr0">
+                                <rect key="frame" x="0.0" y="795" width="414" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Draw"/>
+                                <connections>
+                                    <action selector="drawButtonTapped:" destination="R01-Cn-ogS" eventType="touchUpInside" id="WLt-hw-713"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jF1-ve-nkS">
+                                <rect key="frame" x="0.0" y="131" width="414" height="644"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jF1-ve-nkS" secondAttribute="height" multiplier="2.25:3.5" id="QcV-KD-ovb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jF1-ve-nkS" firstAttribute="centerX" secondItem="dAx-36-yHn" secondAttribute="centerX" id="0qe-Ae-wTY"/>
+                            <constraint firstItem="6zk-6I-Wr0" firstAttribute="leading" secondItem="dAx-36-yHn" secondAttribute="leading" id="3AU-zK-QSc"/>
+                            <constraint firstItem="6Zh-5q-RWq" firstAttribute="centerX" secondItem="dAx-36-yHn" secondAttribute="centerX" id="8LG-LP-luA"/>
+                            <constraint firstItem="jF1-ve-nkS" firstAttribute="leading" secondItem="dAx-36-yHn" secondAttribute="leading" id="IBI-Mq-GoU"/>
+                            <constraint firstItem="jF1-ve-nkS" firstAttribute="centerY" secondItem="dAx-36-yHn" secondAttribute="centerY" id="ILf-QZ-wat"/>
+                            <constraint firstItem="6zk-6I-Wr0" firstAttribute="centerX" secondItem="dAx-36-yHn" secondAttribute="centerX" id="iN1-Iw-9me"/>
+                            <constraint firstItem="jF1-ve-nkS" firstAttribute="top" secondItem="6Zh-5q-RWq" secondAttribute="bottom" constant="10" id="ncs-7u-QhS"/>
+                            <constraint firstItem="dAx-36-yHn" firstAttribute="trailing" secondItem="jF1-ve-nkS" secondAttribute="trailing" id="r6Z-w5-kUs"/>
+                            <constraint firstItem="dAx-36-yHn" firstAttribute="bottom" secondItem="6zk-6I-Wr0" secondAttribute="bottom" constant="25" id="r8g-K2-RYb"/>
+                            <constraint firstItem="dAx-36-yHn" firstAttribute="trailing" secondItem="6zk-6I-Wr0" secondAttribute="trailing" id="zh7-Xh-jc1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dAx-36-yHn"/>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="jF1-ve-nkS" id="2Yb-Hn-HXy"/>
+                        <outlet property="cardLabel" destination="6Zh-5q-RWq" id="R7X-kh-CGD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKM-Hs-mUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="-254"/>
+            <point key="canvasLocation" x="272" y="-256"/>
         </scene>
     </scenes>
 </document>
